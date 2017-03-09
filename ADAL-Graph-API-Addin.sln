@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordAddin", "WordAddin\WordAddin.csproj", "{960486D8-F88C-49E8-AE2D-CE1FD055D318}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADAL-Graph-API-Addin", "WordAddin\ADAL-Graph-API-Addin.csproj", "{960486D8-F88C-49E8-AE2D-CE1FD055D318}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordAddinWeb", "WordAddinWeb\WordAddinWeb.csproj", "{B394B48A-DA86-48B8-AC80-53154246A9F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADAL-Graph-API-AddinWeb", "WordAddinWeb\ADAL-Graph-API-AddinWeb.csproj", "{B394B48A-DA86-48B8-AC80-53154246A9F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

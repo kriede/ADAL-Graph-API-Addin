@@ -43,17 +43,17 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="WordAddinManifest\SharePointProjectItem.spdata">
+    <None Include="ADAL-Graph-API-AddinManifest\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{7f4858eb-4656-4d7e-89a4-0d5e4edc8973}</SharePointProjectItemId>
     </None>
-    <Content Include="WordAddinManifest\WordAddin.xml">
+    <Content Include="ADAL-Graph-API-AddinManifest\ADAL-Graph-API-Addin.xml">
       <OpcRelationship>manifest-oemanifest</OpcRelationship>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WordAddinWeb\WordAddinWeb.csproj">
+    <ProjectReference Include="..\WordAddinWeb\ADAL-Graph-API-AddinWeb.csproj">
       <Project>{B394B48A-DA86-48B8-AC80-53154246A9F7}</Project>
-      <Name>WordAddinWeb</Name>
+      <Name>ADAL-Graph-API-AddinWeb</Name>
       <Private>True</Private>
       <RoleType>Web</RoleType>
       <OutputItemType>SharePointWebProjectOutput</OutputItemType>

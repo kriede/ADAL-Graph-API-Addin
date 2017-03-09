@@ -12,10 +12,13 @@
     <AppDomain>https://login.windows.net</AppDomain>
   </AppDomains>
   <Hosts>
+    <Host Name="Workbook" />
+    <Host Name="Presentation" />
+    <Host Name="Project" />
     <Host Name="Document" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="~remoteAppUrl/App/Home/Home.html" />
+    <SourceLocation DefaultValue="https://my-app-service.azurewebsites.net/App/Home/Home.html" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
