@@ -11,6 +11,7 @@
     <AppDomain>https://login.microsoftonline.com</AppDomain>
     <AppDomain>https://login.windows.net</AppDomain>
     <AppDomain>https://graph.microsoft.com</AppDomain>
+    <AppDomain>https://graph.windows.net</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Workbook" />
