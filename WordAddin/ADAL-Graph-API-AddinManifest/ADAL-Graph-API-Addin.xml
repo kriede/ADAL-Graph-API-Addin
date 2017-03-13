@@ -5,8 +5,8 @@
   <Version>1.0.0.0</Version>
   <ProviderName>[Provider name]</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="WordAddin" />
-  <Description DefaultValue="WordAddin"/>
+  <DisplayName DefaultValue="ADL Graph you Addin" />
+  <Description DefaultValue="ADL Graph you Addin"/>
   <AppDomains>
     <AppDomain>https://login.microsoftonline.com</AppDomain>
     <AppDomain>https://login.windows.net</AppDomain>
