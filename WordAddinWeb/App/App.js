@@ -1,22 +1,19 @@
-﻿/* Common app functionality */
-window.config = {
-    tenant: 'common',
-    clientId: '749e5c27-c434-4267-bf35-8a863013e783',
-    postLogoutRedirectUri: window.location.origin,
-    endpoints: {
-        'https://graph.microsoft.com': 'https://graph.microsoft.com',
-    },
-    cacheLocation: 'localStorage'
-};
-
-var app = (function () {
+﻿var app = (function () {
     "use strict";
 
     var app = {};
 
     // Common initialization function (to be called from each page)
     app.initialize = function () {
-        var authContext = new AuthenticationContext(config);
+        var authContext = new AuthenticationContext({
+            tenant: 'common',
+            clientId: '749e5c27-c434-4267-bf35-8a863013e783',
+            postLogoutRedirectUri: window.location.href.split("?")[0].split("#")[0],
+            endpoints: {
+                'https://graph.microsoft.com': 'https://graph.microsoft.com',
+            },
+            cacheLocation: 'localStorage'
+        });
 
         var $userDisplay = $(".app-user");
         var $signInButton = $(".app-login");
@@ -25,7 +22,6 @@ var app = (function () {
         // Check For & Handle Redirect From AAD After Login
         var isCallback = authContext.isCallback(window.location.hash);
         authContext.handleWindowCallback();
-        //app.showNotification("A");
 
         if (isCallback && !authContext.getLoginError()) {
             window.location = authContext._getItem(authContext.CONSTANTS.STORAGE.LOGIN_REQUEST);
