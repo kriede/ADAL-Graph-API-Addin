@@ -3,6 +3,13 @@
 (function () {
     "use strict";
 
+    window.Logging = {
+        level: 3,
+        log: function (message) {
+            $('#adal-log').append('<div>' + message + '</div>');
+        }
+    };
+
     // The initialize function must be run each time a new page is loaded
     Office.initialize = function (reason) {
         $(document).ready(function () {
@@ -34,8 +41,9 @@
         var baseEndpoint = 'https://graph.microsoft.com';
         var authContext = new AuthenticationContext(config);
         var result = $("#results");
-        result.html("use graph api");
 
+        result.html("use graph api");
+        
         authContext.acquireToken(baseEndpoint, function (error, token) {
             if (error || !token) {
                 app.showNotification("No token: " + error);
