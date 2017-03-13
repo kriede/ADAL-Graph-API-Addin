@@ -19,6 +19,7 @@
         authContext.acquireToken(baseEndpoint, function (error, token) {
             if (error || !token) {
                 app.showNotification("No token: " + error);
+                return;
             }
             var email = authContext._user.userName;
             var url = "https://graph.microsoft.com/v1.0/me/";
