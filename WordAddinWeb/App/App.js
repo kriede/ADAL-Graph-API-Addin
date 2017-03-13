@@ -4,7 +4,7 @@ window.config = {
     clientId: '749e5c27-c434-4267-bf35-8a863013e783',
     postLogoutRedirectUri: window.location.origin,
     endpoints: {
-         officeGraph: 'https://graph.microsoft.com',
+        'https://graph.microsoft.com': 'https://graph.microsoft.com',
     },
     cacheLocation: 'localStorage'
 };
