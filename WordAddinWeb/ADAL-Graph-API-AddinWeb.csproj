@@ -67,7 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\Home\adal.js" />
+    <Content Include="App\adal.js" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\plannerbridge-dev-adal - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\plannerbridge-dev-adal - Web Deploy.pubxml" />

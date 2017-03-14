@@ -13,21 +13,22 @@
 
     // The initialize function must be run each time a new page is loaded
     Office.initialize = function (reason) {
+    };
         $(document).ready(function () {
             app.initialize();
+            var authContext = new AuthenticationContext();
             $('#admin-consent').click(adminConsent);
             $('#use-graph-api').click(useGraphAPI);
-            if (!(new AuthenticationContext()).getCachedUser()) {
+            if (!(authContext).getCachedUser()) {
                 $('#admin-consent').hide();
                 $('#use-graph-api').hide();
             }
         });
-    };
 
     // Request admin to consent for necessary permissions
     function adminConsent() {
         var adal = new AuthenticationContext();
-        adal.config.displayCall = function adminFlowDisplayCall(urlNavigate) {
+        adal.config.displayCall = function (urlNavigate) {
             urlNavigate += '&prompt=admin_consent';
             adal.promptUser(urlNavigate);
         };
@@ -39,18 +40,14 @@
     function useGraphAPI() {
         var baseEndpoint = 'https://graph.microsoft.com';
         var authContext = new AuthenticationContext();
+        authContext.info("start useGraphAPI");
         var result = $("#results");
         
-        authContext.acquireToken(baseEndpoint, function (error, token) {
+        app.acquireToken(authContext, baseEndpoint, function (error, token) {
             if (error || !token) {
-                authContext.config.displayCall = function adminFlowDisplayCall(urlNavigate) {
-                    urlNavigate = _addHintParameters(urlNavigate);
-                };
-                authContext.login();
-                adal.config.displayCall = null;
+                app.showNotification(error);
                 return;
             }
-            var email = authContext._user.userName;
             var url = "https://graph.microsoft.com/v1.0/me/";
             $.ajax({
                 beforeSend: function (request) {
